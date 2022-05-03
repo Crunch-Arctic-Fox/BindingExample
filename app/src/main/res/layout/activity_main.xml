@@ -40,6 +40,7 @@
             app:layout_constraintTop_toBottomOf="@id/name" />
 
         <ProgressBar
+            android:id="@+id/progress_bar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,6 +49,48 @@
             app:hideIfZero="@{viewModel.likes}"
             app:layout_constraintTop_toBottomOf="@id/button"
             app:progressScaled="@{viewModel.likes}" />
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/purple_200"
+            app:layout_constraintTop_toBottomOf="@id/progress_bar" />
+
+        <EditText
+            android:id="@+id/example_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_line" />
+
+        <TextView
+            android:id="@+id/example_output"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{exampleText.text}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/example_text" />
+
+        <View
+            android:id="@+id/view_line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/purple_200"
+            app:layout_constraintTop_toBottomOf="@id/example_output" />
+
+        <ImageView
+            android:id="@+id/iv_ic_launch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/arctic_fox_test"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_line2" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
