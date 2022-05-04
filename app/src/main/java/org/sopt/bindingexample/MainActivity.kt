@@ -22,8 +22,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initClickBtn1(view: View) {
-        val quantity = 1
-        val text = this.resources.getQuantityString(R.plurals.member, quantity, 1)
+        val text = resources.getQuantityString(R.plurals.friend, 1, 1)
         //                                     \_____________/  \________/  \_____________/
         //                                                |            |               |
         //                   id: used to get the plurals resource      |               |
@@ -33,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initClickBtn2(view: View) {
-        val text = resources.getQuantityString(R.plurals.member, 2, 2)
+        val text = resources.getQuantityString(R.plurals.friend, 2, 2)
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
     }
 }
