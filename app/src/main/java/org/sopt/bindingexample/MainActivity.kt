@@ -21,7 +21,19 @@ class MainActivity : AppCompatActivity() {
 //        binding.title = "title_from_activity"
     }
 
-    fun initButtonClick(view: View) {
-        Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show()
+    fun initClickBtn1(view: View) {
+        val quantity = 1
+        val text = this.resources.getQuantityString(R.plurals.member, quantity, 1)
+        //                                     \_____________/  \________/  \_____________/
+        //                                                |            |               |
+        //                   id: used to get the plurals resource      |               |
+        //             quantity: used to determine the appropriate quantity class      |
+        //         formatArgs: used to positionally replace the placeholders %1, %2 and %3
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+    }
+
+    fun initClickBtn2(view: View) {
+        val text = resources.getQuantityString(R.plurals.member, 2, 2)
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
     }
 }

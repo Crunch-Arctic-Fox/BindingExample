@@ -88,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@{exampleText.text}"
+            android:text="@{String.valueOf(exampleText.text.length())}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/example_text" />
 
@@ -100,7 +100,7 @@
             android:background="@color/purple_200"
             app:layout_constraintTop_toBottomOf="@id/example_output" />
         <!-- 예제 3 **************************************************************
-        1. Dimension 사용 방법
+        Dimension 사용 방법
         ***********************************************************************-->
 
         <ImageView
@@ -111,6 +111,41 @@
             android:src="@drawable/ic_launcher_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_line2" />
+
+        <View
+            android:id="@+id/view_line3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/purple_200"
+            app:layout_constraintTop_toBottomOf="@id/iv_ic_launch" />
+
+        <!-- 예제4.*******************************************************
+         plurals 사용 예제
+            - onClick 함수는 mainActivity.kt 에
+            - plurals 는 strings.xml 에 위치함
+        *************************************************************** -->
+
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:onClick="initClickBtn1"
+            android:text="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/view_line3" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:onClick="initClickBtn2"
+            android:text="2"
+            app:layout_constraintStart_toEndOf="@id/button1"
+            app:layout_constraintTop_toTopOf="@id/button1" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
