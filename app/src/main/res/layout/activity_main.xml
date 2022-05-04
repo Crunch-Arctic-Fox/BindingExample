@@ -19,6 +19,18 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <!-- 예제1 *******************************************************************
+        (week10에서 설명안함 / 다음에 Binding Adapter 설명할때 사용할 예정)
+
+        DataBinding, BindingAdapter 를 활용한 예제
+        Button을 누르면 viewmodel의 likes가 1씩 증가하고 ProgressBar의 Value가 변경됨
+        ProgressBar는 퍼센트가 0 이상일 때만 보임
+
+        point1) default를 사용해서 tools 속성을 대체
+        point2) BindingAdapter에서 여러 attibute의 변수를 동시에 사용하기ㅇ
+        point2) BindingAdapter에서 coerceAtMost 를 사용
+        **************************************************************************** -->
+
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
@@ -26,7 +38,6 @@
             android:text="@{`likes = ` + String.valueOf(viewModel.likes), default=my_default}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <Button
             android:id="@+id/button"
@@ -58,6 +69,12 @@
             android:background="@color/purple_200"
             app:layout_constraintTop_toBottomOf="@id/progress_bar" />
 
+        <!-- 예제2 **************************************************************
+        View references 사용 예제
+        EditText의 값을 TextView에서 바로 참조해 EditText의 Text length를 실시간으로 받아옴.
+        양방향 데이터 바인딩을 사용하는 로직을 개선하기 좋아보임!
+        **********************************************************************-->
+
         <EditText
             android:id="@+id/example_text"
             android:layout_width="match_parent"
@@ -82,6 +99,9 @@
             android:layout_marginTop="30dp"
             android:background="@color/purple_200"
             app:layout_constraintTop_toBottomOf="@id/example_output" />
+        <!-- 예제 3 **************************************************************
+        1. Dimension 사용 방법
+        ***********************************************************************-->
 
         <ImageView
             android:id="@+id/iv_ic_launch"

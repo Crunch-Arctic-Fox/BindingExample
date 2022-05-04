@@ -9,8 +9,7 @@ fun setProgress(progressBar: ProgressBar, likes: Int, max: Int) {
     progressBar.progress = (likes * max / 100).coerceAtMost(max)
     /**coerceAtMost
      * Ensures that this value is not greater than the specified maximumValue.
-     * Returns:
-     * this value if it's less than or equal to the maximumValue or the maximumValue otherwise.
+     * Returns: this value if it's less than or equal to the maximumValue or the maximumValue otherwise.
      * */
 }
 
